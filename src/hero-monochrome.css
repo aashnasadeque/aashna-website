@@ -1,0 +1,25 @@
+/* Keep the opening chapter strictly black, white, and grey. */
+.hero{background:#080808;color:#fff}
+.hero-grid{opacity:.055}
+.site-header{border-color:#ffffff30}
+.site-header nav{color:#d0d0d0}
+.site-header nav a:hover,.text-link:hover{color:#fff}
+.logo-star,.header-contact span,.eyebrow,.hero h1 em,.period{color:#fff}
+.status-dot{background:#fff;box-shadow:0 0 14px #fff9}
+.eyebrow-index{color:#888}
+.hero-description{color:#bcbcbc}
+.button-primary{background:#fff;color:#080808}
+.button-primary:hover{background:#dedede}
+.text-link{border-color:#aaa}
+.hero-bottom,.orbit-label-one{color:#aaa}
+.scroll-line{background:#777}
+.hero-visual #scene,.hero-visual .scene-fallback{filter:grayscale(1) contrast(1.1)}
+.interest-panel{background:#101010ed;border-color:#777;border-left-color:#fff;box-shadow:0 15px 42px #0009}
+.interest-panel span,.interest-panel p{color:#bdbdbd}
+.interest-panel strong{color:#fff}
+.interest-button{background:#111;color:#e4e4e4;border-color:#777}
+.interest-button:hover{border-color:#fff}
+.interest-button[aria-pressed="true"]{background:#fff;color:#080808;border-color:#fff}
+.interest-button:focus-visible{outline-color:#fff}
+.replay-intro{color:#ddd;border-color:#888}
+.replay-intro:hover{color:#fff;border-color:#fff}

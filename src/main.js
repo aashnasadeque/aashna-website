@@ -5,6 +5,7 @@ import './interactive.css';
 import './personality.css';
 import './opening.css';
 import './section-colors.css';
+import './hero-monochrome.css';
 import { initOrbit } from './orbit.js';
 
 document.querySelector('#year').textContent = new Date().getFullYear();
