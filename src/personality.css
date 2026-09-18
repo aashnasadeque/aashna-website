@@ -1,0 +1,69 @@
+/* A warmer, more personal opening for the portfolio. */
+.site-header{border-color:#33284422;color:#282333}
+.site-header nav{color:#4d455b}
+.site-header nav a{transition:color .2s}
+.site-header nav a:hover{color:#875ba5}
+.logo-star,.header-contact span{color:#ac6b92}
+.header-contact{border-color:#7b6a8466}
+.header-contact{transition:background .2s,color .2s}
+.header-contact:hover{background:#292237;color:#fff}
+.hero{background:radial-gradient(ellipse at 72% 43%,#eadff0 0%,#f7efe9 52%,#f5f0e9 100%);color:#282333}
+.hero-grid{background-image:linear-gradient(#51305f 1px,transparent 1px),linear-gradient(90deg,#51305f 1px,transparent 1px);opacity:.055}
+.hero h1{font-size:clamp(62px,6.5vw,108px);line-height:.98}
+.hero h1 em{color:#98619a}
+.hero h1 .period{color:#de846e}
+.hero-description{color:#625969}
+.eyebrow{color:#724970}
+.eyebrow-index{color:#a69aa9}
+.status-dot{background:#d88779;box-shadow:0 0 0 4px #d8877926}
+.button-primary{background:#2a2638;color:#fff}
+.button-primary:hover{background:#875ba5}
+.text-link{border-color:#5d5364}
+.text-link{transition:color .2s}
+.text-link:hover{color:#875ba5}
+.hero-bottom{color:#766a7a}
+.hero-bottom span:last-child{display:none}
+.scroll-line{background:#b5a8b7}
+.hero-visual{isolation:isolate}
+.hero-visual #scene{inset:0 0 88px 0;cursor:grab}
+.hero-visual #scene:active{cursor:grabbing}
+.hero-visual canvas{touch-action:none}
+.hero-visual .scene-fallback{top:43%;width:300px;height:300px}
+.orbit-label{color:#806e84;top:18%;right:10%;font-size:10px}
+.interest-panel{--interest-color:#ad94df;position:absolute;z-index:3;left:9%;right:9%;bottom:111px;min-height:112px;padding:17px 22px 16px 25px;background:#fffcf4e8;border:1px solid #ffffff;border-left:5px solid var(--interest-color);border-radius:10px;box-shadow:0 16px 38px #4b315d1c;backdrop-filter:blur(12px);pointer-events:none}
+.interest-panel span{display:block;color:#806e84;font:10px 'DM Mono',monospace;letter-spacing:.12em;margin-bottom:5px}
+.interest-panel strong{display:block;color:#2a2437;font:600 22px 'Space Grotesk',sans-serif;letter-spacing:-.045em;line-height:1.1}
+.interest-panel p{color:#61576a;font-size:13px;line-height:1.35;margin:6px 0 0}
+.interest-controls{position:absolute;z-index:4;left:8%;right:8%;bottom:34px;display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.interest-button{appearance:none;border:1px solid #aa99ad;background:#fbf6f0db;color:#51445c;border-radius:99px;padding:9px 11px;min-height:34px;cursor:pointer;font:500 10px 'DM Mono',monospace;letter-spacing:.02em;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.interest-button:hover{transform:translateY(-2px);border-color:#855f96}
+.interest-button[aria-pressed="true"]{background:#2a2638;color:#fff;border-color:#2a2638}
+.interest-button:focus-visible{outline:2px solid #754f8a;outline-offset:2px}
+.curiosity-ribbon{overflow:hidden;background:#e3a69c;color:#322537;white-space:nowrap;padding:16px 0;font:600 14px 'Space Grotesk',sans-serif;letter-spacing:.12em}
+.curiosity-ribbon>div{width:max-content;animation:ribbon-move 30s linear infinite}
+@keyframes ribbon-move{to{transform:translateX(-50%)}}
+.about-layout h2{position:relative}
+.about-layout h2:after{content:'✳';position:absolute;font-size:39px;color:#d9a6b4;top:-42px;right:14%}
+.about-tags span{transition:background .2s,border-color .2s,color .2s}
+.about-tags span:hover{background:#292536;border-color:#c2a4ca;color:#fff}
+.work-section{background:#f6f1eb}
+.project-card:hover .project-art{transform:translateY(-5px) rotate(-.4deg)}
+.art-whisk{background:#e7d9d2}
+.art-whisk img{height:100%;width:100%;display:block;object-fit:cover;object-position:center 58%;transition:transform .55s ease}
+.project-card:hover .art-whisk img{transform:scale(1.055)}
+.art-whisk .art-caption{background:#211a2dbb;color:#fff;padding:7px 9px;border-radius:3px}
+.more-work-list details{border-bottom:1px solid #d1d0cf}
+.more-work-list summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;cursor:pointer;font-size:15px}
+.more-work-list summary{transition:color .2s}
+.more-work>div.more-work-list summary span{display:inline;border:0;padding:0;margin:0;font-size:inherit}
+.more-work-list summary::-webkit-details-marker{display:none}
+.more-work-list summary:hover{color:#715398}
+.more-work-list summary b{font:10px 'DM Mono',monospace;color:#74717c;text-transform:uppercase;font-weight:400;white-space:nowrap}
+.more-work-list summary i{font-style:normal;font-size:20px;display:inline-block;vertical-align:middle;margin-left:10px;transition:transform .2s}
+.more-work-list details[open] summary i{transform:rotate(45deg)}
+.more-work-list details p{max-width:620px;color:#62646d;line-height:1.65;font-size:14px;margin:0;padding:0 25px 22px 0}
+.more-work-list details p a{color:#644b98;border-bottom:1px solid currentColor}
+.more-work-list summary:focus-visible{outline:2px solid #644b98;outline-offset:2px}
+@media(max-width:900px){.hero{min-height:1030px}.hero-copy{padding-top:145px}.hero-visual{top:39%;right:0;width:75%;height:56%;opacity:1}.hero-visual #scene{bottom:92px}.interest-panel{bottom:112px}}
+@media(max-width:650px){.site-header{background:#f7f0e9dd}.hero{min-height:1240px}.hero-copy{padding:122px 7vw 0}.hero h1{font-size:clamp(54px,13vw,76px)}.hero-description{max-width:330px;font-size:15px;margin:25px 0}.hero-visual{top:575px;right:0;width:100%;height:600px;opacity:1}.hero-visual #scene{bottom:95px}.hero-visual .scene-fallback{top:38%;width:240px;height:240px}.orbit-label{top:14%;right:7%;font-size:9px}.interest-panel{left:7%;right:7%;bottom:121px;padding:13px 15px 13px 18px;min-height:105px}.interest-panel strong{font-size:19px}.interest-panel p{font-size:12px}.interest-controls{left:7%;right:7%;bottom:32px;gap:5px}.interest-button{font-size:9px;padding:8px 9px;min-height:32px}.hero-bottom{bottom:22px}.curiosity-ribbon{font-size:11px;padding:13px 0}.more-work-list summary{font-size:13px}.more-work-list summary b{font-size:9px}.more-work-list details p{font-size:13px;padding-right:0}}
+@media(prefers-reduced-motion:reduce){.curiosity-ribbon>div{animation:none}.interest-button,.art-whisk img{transition:none}}
