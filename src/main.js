@@ -4,14 +4,16 @@ import './style.css';
 import './interactive.css';
 import './personality.css';
 import './opening.css';
+import './section-colors.css';
 import { initOrbit } from './orbit.js';
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const replayRequested = new URLSearchParams(window.location.search).has('intro');
 const opening = document.querySelector('#opening');
 const app = document.querySelector('#app');
 
-if (!reducedMotion && !window.location.hash) {
+if (!reducedMotion || replayRequested) {
   opening.hidden = false;
   app.inert = true;
   document.body.classList.add('opening-active');
@@ -25,7 +27,7 @@ if (!reducedMotion && !window.location.hash) {
   introTimeline
     .from('.opening-line > span', { yPercent: 115, duration: .9, stagger: .13, ease: 'power3.out' })
     .from('.opening-center p', { opacity: 0, y: 14, duration: .45, ease: 'power2.out' }, '-=.28')
-    .to('.opening-center', { scale: 1.035, duration: .55, ease: 'power1.inOut' }, '+=.32')
+    .to('.opening-center', { scale: 1.035, duration: .55, ease: 'power1.inOut' }, '+=1.25')
     .to(opening, { yPercent: -100, duration: .9, ease: 'power3.inOut' }, '-=.08');
   document.querySelector('#skip-opening').addEventListener('click', closeOpening);
 }

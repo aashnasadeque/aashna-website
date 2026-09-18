@@ -1,0 +1,34 @@
+/* One distinct colour field per chapter, ending with the existing green contact page. */
+.about-section{background:#efc6b6;color:#261f28;max-width:none}
+.about-section .section-kicker{color:#684454}
+.about-section .section-kicker span{color:#7c314d}
+.about-layout h2 span{color:#9f4c63}
+.about-copy p{color:#433340}
+.about-tags span{border-color:#a97886;color:#503345}
+.work-section{background:#d8d0e9;color:#211b2b}
+.work-section .section-kicker{color:#62566e}
+.work-section .section-kicker span,.section-heading h2 em{color:#65418d}
+.work-section .section-heading p,.work-hint,.project-card p,.project-detail p{color:#504657}
+.project-card.is-hovered,.project-card.is-open{background:#e6dff0;box-shadow:0 0 0 16px #e6dff0}
+.project-meta{color:#5e536a}
+.more-work-list details{border-color:#9e92ab}
+.more-work-list details p{color:#504657}
+.experience-section{background:#23435c;color:#f6f3f0;max-width:none}
+.experience-section .section-kicker{color:#b9d3dc}
+.experience-section .section-kicker span,.timeline-date{color:#eac5a5}
+.experience-layout h2 em{color:#f0bfa5}
+.timeline-item{border-color:#9fc1d466}
+.timeline-item p{color:#d2dfe4}
+.timeline-item>div>p{color:#fff}
+.beyond-section{background:#a04f62;color:#fff6ee}
+.beyond-section .section-kicker{color:#f4d4d9}
+.beyond-section .section-kicker span,.beyond-section .section-heading h2 em{color:#ffe6ab}
+.beyond-section .section-heading p{color:#f6dbe0}
+.beyond-card{background:#823d53;border-color:#c68698}
+.beyond-card:hover,.beyond-card[open]{background:#703449;border-color:#ffe6ab}
+.beyond-card small,.beyond-card p{color:#fff0f0}
+.beyond-icon,.beyond-card p a{color:#ffe6ab}
+.replay-intro{color:#c9c7d4;border-bottom:1px solid #777383;padding-bottom:3px}
+.replay-intro:hover{color:#e5ff84;border-color:#e5ff84}
+@media(max-width:650px){.replay-intro{margin-left:auto}}
+@media(max-width:650px){.project-card.is-open{box-shadow:0 0 0 9px #e6dff0}}
