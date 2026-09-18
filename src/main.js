@@ -33,18 +33,18 @@ if (!reducedMotion || replayRequested) {
     .to('.smile-mouth', { opacity: 1, strokeDashoffset: 0, duration: .55, ease: 'power2.out' }, '<+.08')
     .to('.smile-ring', { opacity: 1, duration: .35 }, '<+.1')
     .addLabel('faceReady')
-    .to('.smile-ring', { rotation: 180, duration: 6.2, ease: 'none' }, 'faceReady+=.7')
+    .to('.smile-ring', { rotation: 100, duration: 3.3, ease: 'none' }, 'faceReady+=.7')
     .to('.smile-eye-right', { opacity: 0, duration: .12 }, 'faceReady+=1.5')
     .to('.smile-wink', { opacity: 1, duration: .12 }, '<')
     .to('.smile-wink', { opacity: 0, duration: .12 }, '+=.32')
     .to('.smile-eye-right', { opacity: 1, duration: .12 }, '<')
-    .to('.opening-smile', { opacity: 0, scale: 1.25, duration: .4, ease: 'power2.in' }, 'faceReady+=6.85')
+    .to('.opening-smile', { opacity: 0, scale: 1.25, duration: .3, ease: 'power2.in' }, 'faceReady+=3.95')
     .set('.opening-smile', { display: 'none' })
     .to('.opening-center', { opacity: 1, duration: .01 })
-    .from('.opening-line > span', { yPercent: 115, duration: .9, stagger: .13, ease: 'power3.out' })
-    .from('.opening-center p', { opacity: 0, y: 14, duration: .45, ease: 'power2.out' }, '-=.28')
-    .to('.opening-center', { scale: 1.035, duration: .45, ease: 'power1.inOut' }, '+=.45')
-    .to(opening, { yPercent: -100, duration: .9, ease: 'power3.inOut' }, '-=.08');
+    .from('.opening-line > span', { yPercent: 115, duration: .65, stagger: .1, ease: 'power3.out' })
+    .from('.opening-center p', { opacity: 0, y: 14, duration: .3, ease: 'power2.out' }, '-=.2')
+    .to('.opening-center', { scale: 1.035, duration: .2, ease: 'power1.inOut' }, '+=.1')
+    .to(opening, { yPercent: -100, duration: .6, ease: 'power3.inOut' }, '-=.08');
   document.querySelector('#skip-opening').addEventListener('click', closeOpening);
 }
 
