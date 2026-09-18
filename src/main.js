@@ -26,15 +26,24 @@ if (!reducedMotion || replayRequested) {
   };
   const introTimeline = gsap.timeline({ onComplete: closeOpening });
   introTimeline
-    .fromTo('.opening-smile', { opacity: 0, scale: .65 }, { opacity: 1, scale: 1, duration: .5, ease: 'back.out(1.5)' })
-    .to('.smile-ring', { rotation: 180, duration: 1.4, ease: 'none' }, '<')
-    .to('.smile-face', { y: -4, scale: 1.1, transformOrigin: 'center center', duration: .45, yoyo: true, repeat: 1, ease: 'sine.inOut' }, '<+.35')
-    .to('.opening-smile', { opacity: 0, scale: 1.3, duration: .38, ease: 'power2.in' }, '+=.2')
+    .set('.smile-mouth', { strokeDasharray: 65, strokeDashoffset: 65 })
+    .fromTo('.opening-hi', { opacity: 0, scale: .7 }, { opacity: 1, scale: 1, duration: .5, ease: 'back.out(1.5)' })
+    .to('.hi-h', { x: -5, y: -10, scale: .1, opacity: 0, duration: .65, ease: 'power2.inOut' }, '+=.45')
+    .to('.hi-i', { x: 3, y: -10, scale: .1, opacity: 0, duration: .65, ease: 'power2.inOut' }, '<')
+    .to('.smile-eye', { opacity: 1, duration: .38, stagger: .05, ease: 'power2.out' }, '<+.3')
+    .to('.smile-mouth', { opacity: 1, strokeDashoffset: 0, duration: .55, ease: 'power2.out' }, '<+.08')
+    .to('.smile-ring', { opacity: 1, duration: .35 }, '<+.1')
+    .to('.smile-ring', { rotation: 190, duration: 2.45, ease: 'none' }, '<')
+    .to('.smile-eye-right', { opacity: 0, duration: .12 }, '<+.8')
+    .to('.smile-wink', { opacity: 1, duration: .12 }, '<')
+    .to('.smile-wink', { opacity: 0, duration: .12 }, '+=.32')
+    .to('.smile-eye-right', { opacity: 1, duration: .12 }, '<')
+    .to('.opening-smile', { opacity: 0, scale: 1.25, duration: .4, ease: 'power2.in' }, '+=.6')
     .set('.opening-smile', { display: 'none' })
     .to('.opening-center', { opacity: 1, duration: .01 })
     .from('.opening-line > span', { yPercent: 115, duration: .9, stagger: .13, ease: 'power3.out' })
     .from('.opening-center p', { opacity: 0, y: 14, duration: .45, ease: 'power2.out' }, '-=.28')
-    .to('.opening-center', { scale: 1.035, duration: .55, ease: 'power1.inOut' }, '+=.7')
+    .to('.opening-center', { scale: 1.035, duration: .45, ease: 'power1.inOut' }, '+=.45')
     .to(opening, { yPercent: -100, duration: .9, ease: 'power3.inOut' }, '-=.08');
   document.querySelector('#skip-opening').addEventListener('click', closeOpening);
 }
