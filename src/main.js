@@ -44,9 +44,36 @@ if (!reducedMotion) {
     .from('.eyebrow', { y: 18, opacity: 0, duration: .55 })
     .from('.hero h1', { y: 34, opacity: 0, duration: .8 }, '-=.25')
     .from('.hero-description, .hero-actions', { y: 22, opacity: 0, duration: .6, stagger: .12 }, '-=.35');
-  gsap.utils.toArray('.project-card, .about-layout, .timeline-item').forEach((element) => {
+  gsap.utils.toArray('.project-card').forEach((element) => {
     gsap.from(element, { y: 34, opacity: 0, duration: .7, ease: 'power2.out', scrollTrigger: { trigger: element, start: 'top 88%', once: true } });
   });
+
+  const scrollDepth = (element, trigger, from, start = 'top 92%', end = 'top 38%') => {
+    gsap.fromTo(element,
+      { ...from, transformPerspective: 1100, transformOrigin: 'center center' },
+      { rotationX: 0, rotationY: 0, z: 0, scale: 1, opacity: 1, ease: 'none',
+        scrollTrigger: { trigger, start, end, scrub: .6, invalidateOnRefresh: true } });
+  };
+
+  scrollDepth('.hero-visual', '.hero', { rotationY: -7, rotationX: 4, z: -70, scale: .97, opacity: 1 }, 'top top', 'bottom top');
+  scrollDepth('.about-layout h2', '#about', { rotationY: -15, rotationX: 8, z: -100, scale: .94, opacity: .7 });
+  scrollDepth('.about-copy', '#about', { rotationY: 12, rotationX: -5, z: -75, scale: .96, opacity: .75 });
+  gsap.fromTo('.about-links-art', { rotationY: -45, rotationX: -18, z: -130, opacity: .18 },
+    { rotationY: 48, rotationX: 18, z: 40, opacity: .85, ease: 'none', scrollTrigger: { trigger: '#about', start: 'top 95%', end: 'bottom 30%', scrub: .7 } });
+  gsap.utils.toArray('.project-art').forEach((art, index) => {
+    scrollDepth(art, art.closest('.project-card'), { rotationY: index % 2 ? 13 : -13, rotationX: 8, z: -90, scale: .92, opacity: .7 });
+  });
+  gsap.utils.toArray('.timeline-item').forEach((item, index) => {
+    scrollDepth(item, item, { rotationY: index % 2 ? 12 : -12, rotationX: 7, z: -85, scale: .96, opacity: .72 }, 'top 96%', 'top 48%');
+  });
+  gsap.fromTo('.experience-stack', { rotationY: -55, rotationX: 18, z: -130, opacity: .15 },
+    { rotationY: 43, rotationX: -14, z: 35, opacity: 1, ease: 'none', scrollTrigger: { trigger: '#experience', start: 'top 95%', end: 'bottom 35%', scrub: .7 } });
+  gsap.utils.toArray('.beyond-card').forEach((card, index) => {
+    scrollDepth(card, '#beyond', { rotationY: (index - 1.5) * 10, rotationX: 10, z: -120, scale: .92, opacity: .65 }, 'top 85%', 'center 55%');
+  });
+  scrollDepth('.contact-section h2', '#contact', { rotationX: 20, rotationY: -7, z: -130, scale: .91, opacity: .68 }, 'top 95%', 'top 35%');
+  gsap.fromTo('.contact-knot', { rotationX: -35, rotationY: -40, scale: .7, opacity: .2 },
+    { rotationX: 35, rotationY: 70, scale: 1, opacity: .7, ease: 'none', scrollTrigger: { trigger: '#contact', start: 'top 95%', end: 'bottom bottom', scrub: .7 } });
 }
 
 initOrbit({ reducedMotion });

@@ -48,40 +48,50 @@ export function initOrbit({ reducedMotion }) {
     const fill = new THREE.PointLight(0x8f72db, 62, 30); fill.position.set(5, -3, 5); scene.add(fill);
 
     const group = new THREE.Group();
-    group.position.y = .28;
+    group.position.y = .12;
     scene.add(group);
-    const coreMaterial = new THREE.MeshPhysicalMaterial({ color: interests[0].color, metalness: .17, roughness: .22, clearcoat: 1, clearcoatRoughness: .12, flatShading: true });
-    const core = new THREE.Mesh(new THREE.IcosahedronGeometry(1.52, 3), coreMaterial);
-    group.add(core);
-    const wire = new THREE.Mesh(new THREE.IcosahedronGeometry(1.56, 2), new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true, transparent: true, opacity: .14 }));
-    group.add(wire);
-    const orbit = new THREE.Mesh(new THREE.TorusGeometry(2.36, .037, 10, 160), new THREE.MeshStandardMaterial({ color: 0xe5a9a5, metalness: .3, roughness: .3 }));
-    orbit.rotation.set(.32, .3, .12); group.add(orbit);
-    const secondOrbit = new THREE.Mesh(new THREE.TorusGeometry(2.06, .012, 6, 140), new THREE.MeshBasicMaterial({ color: 0x8779a9, transparent: true, opacity: .5 }));
-    secondOrbit.rotation.set(1.35, .15, -.23); group.add(secondOrbit);
+    const pearl = new THREE.MeshPhysicalMaterial({ color: 0xc8b9eb, metalness: .25, roughness: .24, clearcoat: 1 });
+    const accentMaterial = new THREE.MeshPhysicalMaterial({ color: 0xf1a9ad, metalness: .2, roughness: .24, clearcoat: 1 });
+    const threadMaterial = new THREE.MeshBasicMaterial({ color: 0xe8d2f6, transparent: true, opacity: .48 });
+    const path = (points, radius, material) => {
+      const curve = new THREE.CatmullRomCurve3(points.map(([x, y, z]) => new THREE.Vector3(x, y, z)));
+      const mesh = new THREE.Mesh(new THREE.TubeGeometry(curve, 80, radius, 10, false), material);
+      group.add(mesh);
+      return mesh;
+    };
 
+    // A and S are dimensional strokes, joined by a lighter thread.
+    path([[-2.3, -1.65, .1], [-1.98, -.9, .15], [-1.5, .35, .25], [-1.08, 1.55, .05], [-.7, .35, -.1], [-.28, -.9, .05], [0, -1.65, .16]], .11, pearl);
+    path([[-1.88, -.52, .3], [-1.42, -.5, .38], [-.75, -.52, .3]], .085, pearl);
+    path([[2.15, 1.32, .12], [1.42, 1.64, .27], [.59, 1.31, .32], [.4, .61, .41], [.83, .12, .48], [1.58, -.25, .38], [1.91, -.94, .22], [1.52, -1.5, .13], [.7, -1.57, .22], [.18, -1.26, .35]], .12, accentMaterial);
+    path([[-2.78, .5, -.65], [-2.18, 1.8, -.7], [-.52, 1.94, -.8], [.35, .94, -.72], [1.73, .78, -.8], [2.62, -.02, -.65], [1.99, -1.78, -.66], [.24, -1.92, -.7], [-1.29, -1.33, -.62], [-2.78, .5, -.65]], .024, threadMaterial);
+    path([[-2.63, -.7, -.35], [-1.68, -.12, -.48], [-.45, -.23, -.42], [.65, -.85, -.43], [1.74, -.58, -.44], [2.48, .1, -.38]], .018, threadMaterial);
+
+    const nodePositions = [
+      [-2.58, .48, .55], [-1.72, -1.24, .66], [-.25, 1.56, .42],
+      [.54, -.55, .65], [2.2, .81, .52], [1.95, -1.35, .45],
+    ];
     const nodes = interests.map((interest, index) => {
-      const angle = (index / interests.length) * Math.PI * 2 + .3;
-      const node = new THREE.Mesh(new THREE.SphereGeometry(.21, 20, 20), new THREE.MeshStandardMaterial({ color: interest.color, emissive: interest.color, emissiveIntensity: .28, roughness: .2 }));
-      node.position.set(Math.cos(angle) * 2.55, Math.sin(angle) * 2.12, Math.sin(angle * 2) * .75);
+      const node = new THREE.Mesh(new THREE.SphereGeometry(.17, 20, 20), new THREE.MeshStandardMaterial({ color: interest.color, emissive: interest.color, emissiveIntensity: .24, roughness: .18 }));
+      node.position.set(...nodePositions[index]);
       node.userData.index = index;
       group.add(node);
       return node;
     });
-    const starsGeometry = new THREE.BufferGeometry();
-    const stars = new Float32Array(135 * 3);
-    for (let i = 0; i < 135; i++) {
-      stars[i * 3] = (Math.random() - .5) * 9;
-      stars[i * 3 + 1] = (Math.random() - .5) * 9;
-      stars[i * 3 + 2] = (Math.random() - .5) * 4 - 1;
+    const sparksGeometry = new THREE.BufferGeometry();
+    const sparks = new Float32Array(90 * 3);
+    for (let i = 0; i < 90; i++) {
+      sparks[i * 3] = (Math.random() - .5) * 8;
+      sparks[i * 3 + 1] = (Math.random() - .5) * 7;
+      sparks[i * 3 + 2] = (Math.random() - .5) * 3 - 1;
     }
-    starsGeometry.setAttribute('position', new THREE.BufferAttribute(stars, 3));
-    scene.add(new THREE.Points(starsGeometry, new THREE.PointsMaterial({ color: 0x937cab, size: .025, transparent: true, opacity: .6 })));
+    sparksGeometry.setAttribute('position', new THREE.BufferAttribute(sparks, 3));
+    scene.add(new THREE.Points(sparksGeometry, new THREE.PointsMaterial({ color: 0xc4b6dc, size: .02, transparent: true, opacity: .55 })));
 
     updateScene = (index) => {
       const target = new THREE.Color(interests[index].color);
-      if (reducedMotion) coreMaterial.color.copy(target);
-      else gsap.to(coreMaterial.color, { r: target.r, g: target.g, b: target.b, duration: .5, overwrite: true });
+      if (reducedMotion) accentMaterial.color.copy(target);
+      else gsap.to(accentMaterial.color, { r: target.r, g: target.g, b: target.b, duration: .5, overwrite: true });
       nodes.forEach((node, i) => {
         const scale = i === index ? 1.45 : 1;
         if (reducedMotion) node.scale.setScalar(scale);
@@ -129,7 +139,7 @@ export function initOrbit({ reducedMotion }) {
       renderer.setSize(width, height);
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
-      group.scale.setScalar(width < 520 ? .77 : .95);
+      group.scale.setScalar(width < 520 ? .72 : .93);
       renderer.render(scene, camera);
     }
     window.addEventListener('resize', resize);
@@ -138,16 +148,24 @@ export function initOrbit({ reducedMotion }) {
     const clock = new THREE.Clock();
     function tick() {
       const t = clock.getElapsedTime();
-      if (!drag.active) group.rotation.y += .0017;
-      group.position.y = .28 + Math.sin(t * .7) * .07;
-      secondOrbit.rotation.z += .001;
+      if (!drag.active) {
+        group.rotation.y += (Math.sin(t * .45) * .18 - group.rotation.y) * .012;
+        group.rotation.x += (Math.sin(t * .35) * .06 - group.rotation.x) * .012;
+      }
+      group.position.y = .12 + Math.sin(t * .7) * .06;
       renderer.render(scene, camera);
     }
-    if (!reducedMotion) renderer.setAnimationLoop(tick);
-    document.addEventListener('visibilitychange', () => {
-      if (reducedMotion) return;
-      renderer.setAnimationLoop(document.hidden ? null : tick);
-    });
+    if (!reducedMotion) {
+      let inView = true;
+      const syncLoop = () => renderer.setAnimationLoop(!document.hidden && inView ? tick : null);
+      const observer = new IntersectionObserver(([entry]) => {
+        inView = entry.isIntersecting;
+        syncLoop();
+      }, { threshold: .01 });
+      observer.observe(visual);
+      document.addEventListener('visibilitychange', syncLoop);
+      syncLoop();
+    }
   } catch (error) {
     console.warn('3D scene unavailable; showing static artwork.', error);
   }
