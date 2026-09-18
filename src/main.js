@@ -3,10 +3,32 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './style.css';
 import './interactive.css';
 import './personality.css';
+import './opening.css';
 import { initOrbit } from './orbit.js';
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const opening = document.querySelector('#opening');
+const app = document.querySelector('#app');
+
+if (!reducedMotion && !window.location.hash) {
+  opening.hidden = false;
+  app.inert = true;
+  document.body.classList.add('opening-active');
+  const closeOpening = () => {
+    introTimeline.kill();
+    opening.hidden = true;
+    app.inert = false;
+    document.body.classList.remove('opening-active');
+  };
+  const introTimeline = gsap.timeline({ onComplete: closeOpening });
+  introTimeline
+    .from('.opening-line > span', { yPercent: 115, duration: .9, stagger: .13, ease: 'power3.out' })
+    .from('.opening-center p', { opacity: 0, y: 14, duration: .45, ease: 'power2.out' }, '-=.28')
+    .to('.opening-center', { scale: 1.035, duration: .55, ease: 'power1.inOut' }, '+=.32')
+    .to(opening, { yPercent: -100, duration: .9, ease: 'power3.inOut' }, '-=.08');
+  document.querySelector('#skip-opening').addEventListener('click', closeOpening);
+}
 
 document.querySelectorAll('.project-toggle').forEach((button) => {
   const card = button.closest('.project-card');
@@ -40,10 +62,6 @@ document.querySelectorAll('.project-toggle').forEach((button) => {
 
 if (!reducedMotion) {
   gsap.registerPlugin(ScrollTrigger);
-  gsap.timeline({ defaults: { ease: 'power3.out' } })
-    .from('.eyebrow', { y: 18, opacity: 0, duration: .55 })
-    .from('.hero h1', { y: 34, opacity: 0, duration: .8 }, '-=.25')
-    .from('.hero-description, .hero-actions', { y: 22, opacity: 0, duration: .6, stagger: .12 }, '-=.35');
   gsap.utils.toArray('.project-card').forEach((element) => {
     gsap.from(element, { y: 34, opacity: 0, duration: .7, ease: 'power2.out', scrollTrigger: { trigger: element, start: 'top 88%', once: true } });
   });
