@@ -25,9 +25,15 @@ if (!reducedMotion || replayRequested) {
   };
   const introTimeline = gsap.timeline({ onComplete: closeOpening });
   introTimeline
+    .fromTo('.opening-smile', { opacity: 0, scale: .65 }, { opacity: 1, scale: 1, duration: .5, ease: 'back.out(1.5)' })
+    .to('.smile-ring', { rotation: 180, duration: 1.4, ease: 'none' }, '<')
+    .to('.smile-face', { y: -4, scale: 1.1, transformOrigin: 'center center', duration: .45, yoyo: true, repeat: 1, ease: 'sine.inOut' }, '<+.35')
+    .to('.opening-smile', { opacity: 0, scale: 1.3, duration: .38, ease: 'power2.in' }, '+=.2')
+    .set('.opening-smile', { display: 'none' })
+    .to('.opening-center', { opacity: 1, duration: .01 })
     .from('.opening-line > span', { yPercent: 115, duration: .9, stagger: .13, ease: 'power3.out' })
     .from('.opening-center p', { opacity: 0, y: 14, duration: .45, ease: 'power2.out' }, '-=.28')
-    .to('.opening-center', { scale: 1.035, duration: .55, ease: 'power1.inOut' }, '+=1.25')
+    .to('.opening-center', { scale: 1.035, duration: .55, ease: 'power1.inOut' }, '+=.7')
     .to(opening, { yPercent: -100, duration: .9, ease: 'power3.inOut' }, '-=.08');
   document.querySelector('#skip-opening').addEventListener('click', closeOpening);
 }

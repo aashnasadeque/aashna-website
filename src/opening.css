@@ -5,7 +5,14 @@ body.opening-active{overflow:hidden}
 .opening-top button{border:0;border-bottom:1px solid currentColor;background:transparent;color:inherit;padding:5px 0;cursor:pointer;font:inherit;letter-spacing:inherit}
 .opening-top button:hover{color:#c9c9c9}
 .opening-top button:focus-visible{outline:2px solid #fff;outline-offset:5px}
-.opening-center{width:100%;max-width:1160px;margin:auto;transform-origin:center center}
+.opening-smile{position:absolute;left:50%;top:50%;width:160px;height:160px;margin:-80px 0 0 -80px;transform-origin:center center}
+.opening-smile svg{display:block;width:100%;height:100%;overflow:visible}
+.smile-ring{transform-origin:80px 80px}
+.smile-ring text{fill:#fff;font:500 8.5px 'DM Mono',monospace;letter-spacing:2px}
+.smile-face{transform-origin:80px 80px}
+.smile-face circle{fill:#fff}
+.smile-face path{fill:none;stroke:#fff;stroke-width:6;stroke-linecap:round}
+.opening-center{width:100%;max-width:1160px;margin:auto;transform-origin:center center;opacity:0}
 .opening-line{overflow:hidden}
 .opening-line>span{display:block;font:600 clamp(92px,12vw,190px)/.88 'Space Grotesk',sans-serif;letter-spacing:-.105em;white-space:nowrap}
 .opening-line:nth-child(2){text-align:right}
