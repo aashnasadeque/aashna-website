@@ -2,9 +2,40 @@ import * as THREE from 'three';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './style.css';
+import './interactive.css';
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+document.querySelectorAll('.project-toggle').forEach((button) => {
+  const card = button.closest('.project-card');
+  const detail = card.querySelector('.project-detail');
+  const sync = () => {
+    const expanded = card.classList.contains('is-open') || card.classList.contains('is-hovered');
+    button.setAttribute('aria-expanded', String(expanded));
+    button.firstChild.textContent = expanded ? 'Less details ' : 'More details ';
+    detail.inert = !expanded;
+  };
+  card.addEventListener('pointerenter', (event) => {
+    if (event.pointerType !== 'mouse') return;
+    card.classList.add('is-hovered');
+    sync();
+  });
+  card.addEventListener('pointerleave', () => {
+    card.classList.remove('is-hovered');
+    sync();
+  });
+  button.addEventListener('click', () => {
+    if (card.classList.contains('is-hovered') && !card.classList.contains('is-open')) {
+      card.classList.remove('is-hovered');
+    } else {
+      card.classList.toggle('is-open');
+    }
+    card.classList.remove('is-hovered');
+    sync();
+  });
+  sync();
+});
 
 if (!reducedMotion) {
   gsap.registerPlugin(ScrollTrigger);
