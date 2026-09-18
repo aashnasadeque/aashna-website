@@ -13,17 +13,32 @@ const replayRequested = new URLSearchParams(window.location.search).has('intro')
 const opening = document.querySelector('#opening');
 const app = document.querySelector('#app');
 
-if (!reducedMotion || replayRequested) {
-  opening.hidden = false;
-  app.inert = true;
-  document.body.classList.add('opening-active');
-  const closeOpening = () => {
-    introTimeline.kill();
-    opening.hidden = true;
+opening.hidden = false;
+app.inert = true;
+document.body.classList.add('opening-active');
+const skipOpening = document.querySelector('#skip-opening');
+let introTimeline;
+let openingReady = false;
+const finishOpening = (scrollToSite = false) => {
+  if (!openingReady) {
+    introTimeline?.kill();
+    gsap.set('.opening-smile', { display: 'none' });
+    gsap.set('.opening-center', { opacity: 1, scale: 1 });
+    gsap.set('.opening-line > span, .opening-center p', { clearProps: 'all' });
+    opening.classList.add('is-ready');
     app.inert = false;
     document.body.classList.remove('opening-active');
-  };
-  const introTimeline = gsap.timeline({ onComplete: closeOpening });
+    skipOpening.textContent = 'EXPLORE SITE ↓';
+    openingReady = true;
+  }
+  if (scrollToSite) requestAnimationFrame(() => document.querySelector('#top').scrollIntoView({ behavior: 'auto' }));
+};
+skipOpening.addEventListener('click', () => finishOpening(true));
+
+if (reducedMotion && !replayRequested) {
+  finishOpening();
+} else {
+  introTimeline = gsap.timeline({ onComplete: () => finishOpening() });
   introTimeline
     .set('.smile-mouth', { strokeDasharray: 65, strokeDashoffset: 65 })
     .fromTo('.opening-hi', { opacity: 0, scale: .7 }, { opacity: 1, scale: 1, duration: .5, ease: 'back.out(1.5)' })
@@ -42,10 +57,7 @@ if (!reducedMotion || replayRequested) {
     .set('.opening-smile', { display: 'none' })
     .to('.opening-center', { opacity: 1, duration: .01 })
     .from('.opening-line > span', { yPercent: 115, duration: .65, stagger: .1, ease: 'power3.out' })
-    .from('.opening-center p', { opacity: 0, y: 14, duration: .3, ease: 'power2.out' }, '-=.2')
-    .to('.opening-center', { scale: 1.035, duration: .2, ease: 'power1.inOut' }, '+=.1')
-    .to(opening, { yPercent: -100, duration: .6, ease: 'power3.inOut' }, '-=.08');
-  document.querySelector('#skip-opening').addEventListener('click', closeOpening);
+    .from('.opening-center p', { opacity: 0, y: 14, duration: .3, ease: 'power2.out' }, '-=.2');
 }
 
 
