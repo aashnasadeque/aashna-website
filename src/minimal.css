@@ -1,6 +1,6 @@
 /* A quiet, static first page. The coloured chapters retain their content. */
 html{scroll-behavior:auto}
-.site-header .logo{font:500 20px 'DM Mono',monospace;letter-spacing:.14em;white-space:nowrap}
+.site-header .logo{font:500 11px 'DM Mono',monospace;letter-spacing:.1em;white-space:nowrap}
 #app *,#app *::before,#app *::after{animation:none!important;transition:none!important}
 .hero{display:block;position:relative;min-height:max(760px,100svh);height:auto;max-height:none;background:#080808}
 .hero-copy{padding:clamp(170px,20vh,250px) 8vw 150px;max-width:1440px;margin:0 auto}
@@ -16,4 +16,4 @@ html{scroll-behavior:auto}
 .about-layout h2,.about-copy,.project-art,.timeline-item,.beyond-card,.contact-section h2{transform:none!important;backface-visibility:visible}
 .project-card:hover .project-art,.beyond-card:hover,.beyond-card[open],.art-whisk img{transform:none}
 @media(max-width:900px){.hero{min-height:760px}.hero-copy{padding:170px 7vw 145px}.hero h1{font-size:clamp(59px,9vw,86px)}.hero-bottom{left:7vw;right:7vw}}
-@media(max-width:650px){.site-header .logo{font-size:13px;letter-spacing:.1em}.hero{min-height:720px}.hero-copy{padding:125px 7vw 135px}.hero h1{font-size:clamp(51px,12vw,72px);line-height:1.04}.hero-description{font-size:15px;margin:30px 0 25px}.hero-actions{gap:22px;flex-wrap:wrap}.hero-bottom{bottom:24px}.hero-bottom span:last-child{display:none}}
+@media(max-width:650px){.site-header .logo{font-size:9px}.hero{min-height:720px}.hero-copy{padding:125px 7vw 135px}.hero h1{font-size:clamp(51px,12vw,72px);line-height:1.04}.hero-description{font-size:15px;margin:30px 0 25px}.hero-actions{gap:22px;flex-wrap:wrap}.hero-bottom{bottom:24px}.hero-bottom span:last-child{display:none}}
