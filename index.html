@@ -11,6 +11,27 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <div class="opening" id="opening" hidden>
+      <div class="opening-top"><span>AASHNA SADEQUE</span><button type="button" id="skip-opening">SKIP INTRO ↗</button></div>
+      <div class="opening-smile" aria-hidden="true">
+        <div class="smile-stage">
+          <div class="opening-hi"><span class="hi-h">h</span><span class="hi-i">i</span></div>
+          <svg class="smile-ring" viewBox="0 0 160 160" role="presentation">
+            <defs><path id="smile-circle" d="M80 80 m-61 0 a61 61 0 1 1 122 0 a61 61 0 1 1 -122 0" /></defs>
+            <circle class="smile-guide" cx="80" cy="80" r="61" /><text textLength="376" lengthAdjust="spacing"><textPath href="#smile-circle">HELLO FROM AASHNA · NICE TO MEET YOU · HELLO FROM AASHNA · </textPath></text>
+          </svg>
+          <svg class="smile-face" viewBox="0 0 160 160" role="presentation">
+            <circle class="smile-eye smile-eye-left" cx="63" cy="70" r="4" /><circle class="smile-eye smile-eye-right" cx="97" cy="70" r="4" /><path class="smile-wink" d="M90 70 Q97 65 104 70" /><path class="smile-mouth" d="M59 91 Q80 114 101 91" />
+          </svg>
+        </div>
+      </div>
+      <div class="opening-center" aria-label="Aashna Sadeque">
+        <div class="opening-line"><span>Aashna</span></div>
+        <div class="opening-line"><span>Sadeque<span class="opening-period">.</span></span></div>
+        <p>AMBITIOUS IDEAS · HUMAN CONNECTION</p>
+      </div>
+      <div class="opening-bottom"><span>DEVELOPER · MAKER · COMMUNITY BUILDER</span><span>VICTORIA, BC</span></div>
+    </div>
     <div id="app">
       <header class="site-header">
           <a class="logo" href="#top" aria-label="Aashna Sadeque, back to top">A<span class="logo-star">✳</span>S</a>
@@ -34,16 +55,7 @@
               <a class="text-link" href="/Aashna_Sadeque_Resume.pdf" target="_blank" rel="noopener">View résumé <span aria-hidden="true">↗</span></a>
             </div>
           </div>
-          <div class="hero-smile" role="img" aria-label="A smiling face surrounded by a hello from Aashna">
-            <svg viewBox="0 0 160 160" aria-hidden="true">
-              <defs><path id="hero-smile-circle" d="M80 80 m-61 0 a61 61 0 1 1 122 0 a61 61 0 1 1 -122 0" /></defs>
-              <circle class="hero-smile-guide" cx="80" cy="80" r="61" />
-              <text textLength="376" lengthAdjust="spacing"><textPath href="#hero-smile-circle">HELLO FROM AASHNA · NICE TO MEET YOU · HELLO FROM AASHNA · </textPath></text>
-              <circle cx="63" cy="70" r="4" /><circle cx="97" cy="70" r="4" />
-              <path class="hero-smile-mouth" d="M59 91 Q80 114 101 91" />
-            </svg>
-          </div>
-          <div class="hero-bottom"><span>SCROLL TO EXPLORE</span><span class="scroll-line" aria-hidden="true"></span><span>VICTORIA, BC · CANADA</span></div>
+          <div class="hero-bottom"><span>SCROLL TO EXPLORE</span><span class="scroll-line" aria-hidden="true"></span><a class="replay-intro" href="./?intro=1">REPLAY INTRO ↗</a><span>VICTORIA, BC · CANADA</span></div>
         </section>
 
         <section class="about-section section-wrap" id="about" aria-labelledby="about-title">
