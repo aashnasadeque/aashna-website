@@ -10,10 +10,9 @@ body.opening-active{overflow:hidden}
 .opening-hi{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:700 76px 'Space Grotesk',sans-serif;letter-spacing:-.12em}
 .opening-hi span{display:inline-block;transform-origin:center center}
 .opening-smile svg{position:absolute;inset:0;display:block;width:190px;height:190px;overflow:visible}
-.smile-ring{transform-origin:80px 80px;opacity:0}
+.smile-ring{transform-origin:center center;opacity:0}
 .smile-ring text{fill:#fff;font:500 8.5px 'DM Mono',monospace;letter-spacing:1.8px}
 .smile-guide{fill:none;stroke:#fff;stroke-width:.5;opacity:.25}
-.smile-face{transform-origin:80px 80px}
 .smile-face circle{fill:#fff}
 .smile-eye{opacity:0}
 .smile-face path{fill:none;stroke:#fff;stroke-linecap:round}
