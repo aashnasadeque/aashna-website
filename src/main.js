@@ -24,7 +24,7 @@ const applyTheme = (theme) => {
   themeToggle.setAttribute('aria-pressed', String(theme === 'light'));
   themeToggle.textContent = theme === 'light' ? 'DARK MODE' : 'LIGHT MODE';
 };
-applyTheme(localStorage.getItem('aashna-theme') || 'dark');
+applyTheme(localStorage.getItem('aashna-theme') || 'light');
 themeToggle.addEventListener('click', () => {
   const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
   localStorage.setItem('aashna-theme', nextTheme);
