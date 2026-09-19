@@ -20,8 +20,8 @@ html{scroll-behavior:auto}
 .project-toggle,.project-detail a,.more-work-list details p a{color:var(--visitor-deep);border-color:currentColor}
 .beyond-icon,.beyond-card p a{color:var(--visitor-deep)}
 .contact-link{color:var(--visitor-deep);border-color:currentColor}
-[data-theme="light"]{background:#f7f6f2;color:#111}
-[data-theme="light"] .hero{background:#f7f6f2;color:#111}
+[data-theme="light"]{background:#fff;color:#111}
+[data-theme="light"] .hero{background:#fff;color:#111}
 [data-theme="light"] .site-header{border-color:#1112}
 [data-theme="light"] .site-header nav{color:#454545}
 [data-theme="light"] .site-header nav a:hover{color:var(--visitor-deep)}
