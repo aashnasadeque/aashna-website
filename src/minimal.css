@@ -1,6 +1,12 @@
 /* A quiet, static first page. The coloured chapters retain their content. */
 html{scroll-behavior:auto}
 .site-header .logo{font:500 11px 'DM Mono',monospace;letter-spacing:.1em;white-space:nowrap}
+.mini-smile{position:relative;display:inline-block;flex:0 0 auto;width:30px;height:30px;border:1px solid currentColor;border-radius:50%;margin-left:auto!important;margin-right:0!important;color:inherit!important;opacity:.72}
+.mini-smile i{position:absolute;top:9px;width:3px;height:3px;border-radius:50%;background:currentColor}
+.mini-smile i:first-child{left:8px}.mini-smile i:nth-child(2){right:8px}
+.mini-smile b{position:absolute;left:8px;top:12px;width:12px;height:8px;border-bottom:1.5px solid currentColor;border-radius:0 0 12px 12px}
+.section-kicker{display:flex;align-items:center;gap:8px}
+.site-header .header-smile{position:absolute;left:calc(5vw + 132px);margin:0!important;color:#fff!important;opacity:.6}
 #app *,#app *::before,#app *::after{animation:none!important;transition:none!important}
 .hero{display:block;position:relative;min-height:max(760px,100svh);height:auto;max-height:none;background:#080808}
 .hero-copy{padding:clamp(170px,20vh,250px) 8vw 150px;max-width:1440px;margin:0 auto}
@@ -17,4 +23,4 @@ html{scroll-behavior:auto}
 .about-layout h2,.about-copy,.project-art,.timeline-item,.beyond-card,.contact-section h2{transform:none!important;backface-visibility:visible}
 .project-card:hover .project-art,.beyond-card:hover,.beyond-card[open],.art-whisk img{transform:none}
 @media(max-width:900px){.hero{min-height:760px}.hero-copy{padding:170px 7vw 145px}.hero h1{font-size:clamp(59px,9vw,86px)}.hero-bottom{left:7vw;right:7vw}}
-@media(max-width:650px){.site-header .logo{font-size:9px}.hero{min-height:720px}.hero-copy{padding:125px 7vw 135px}.hero h1{font-size:clamp(51px,12vw,72px);line-height:1.04}.hero-description{font-size:15px;margin:30px 0 25px}.hero-actions{gap:22px;flex-wrap:wrap}.hero-bottom{bottom:24px}.hero-bottom span:last-child{display:none}}
+@media(max-width:650px){.site-header .logo{font-size:9px}.mini-smile{width:26px;height:26px}.mini-smile i{top:8px}.mini-smile i:first-child{left:7px}.mini-smile i:nth-child(2){right:7px}.mini-smile b{left:7px;top:11px;width:10px;height:7px}.site-header .header-smile{left:auto;right:112px}.hero{min-height:720px}.hero-copy{padding:125px 7vw 135px}.hero h1{font-size:clamp(51px,12vw,72px);line-height:1.04}.hero-description{font-size:15px;margin:30px 0 25px}.hero-actions{gap:22px;flex-wrap:wrap}.hero-bottom{bottom:24px}.hero-bottom span:last-child{display:none}}

@@ -31,7 +31,11 @@ const finishOpening = (scrollToSite = false) => {
     skipOpening.textContent = 'EXPLORE SITE ↓';
     openingReady = true;
   }
-  if (scrollToSite) requestAnimationFrame(() => document.querySelector('#top').scrollIntoView({ behavior: 'auto' }));
+  if (scrollToSite) {
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: opening.offsetHeight, behavior: 'auto' });
+    });
+  }
 };
 skipOpening.addEventListener('click', () => finishOpening(true));
 

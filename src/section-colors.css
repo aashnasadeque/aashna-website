@@ -20,14 +20,14 @@
 .timeline-item{border-color:#83aabd80}
 .timeline-item p{color:#496b7c}
 .timeline-item>div>p{color:#294b5c}
-.beyond-section{background:#f4dfcf;color:#3f2c28}
-.beyond-section .section-kicker{color:#8a675b}
-.beyond-section .section-kicker span,.beyond-section .section-heading h2 em{color:#b26450}
-.beyond-section .section-heading p{color:#76564d}
-.beyond-card{background:#efd2c0;border-color:#d3a58f}
-.beyond-card:hover,.beyond-card[open]{background:#e9c5b0;border-color:#b87860}
-.beyond-card small,.beyond-card p{color:#684a42}
-.beyond-icon,.beyond-card p a{color:#a95440}
+.beyond-section{background:#f4e8a8;color:#413b20}
+.beyond-section .section-kicker{color:#766d38}
+.beyond-section .section-kicker span,.beyond-section .section-heading h2 em{color:#87791e}
+.beyond-section .section-heading p{color:#665f35}
+.beyond-card{background:#edde91;border-color:#cbbd62}
+.beyond-card:hover,.beyond-card[open]{background:#e5d477;border-color:#9e9034}
+.beyond-card small,.beyond-card p{color:#5e572f}
+.beyond-icon,.beyond-card p a{color:#756910}
 .replay-intro{color:#c9c7d4;border-bottom:1px solid #777383;padding-bottom:3px}
 .replay-intro:hover{color:#e5ff84;border-color:#e5ff84}
 @media(max-width:650px){.replay-intro{margin-left:auto}}

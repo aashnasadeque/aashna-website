@@ -3,11 +3,11 @@ body.opening-active{overflow:hidden}
 .opening{position:fixed;z-index:1000;inset:0;background:#050505;color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:28px 4vw;will-change:transform}
 .opening[hidden]{display:none}
 .opening.is-ready{position:relative;inset:auto;min-height:100svh;z-index:0;will-change:auto}
-.opening-top,.opening-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;font:500 11px 'DM Mono',monospace;letter-spacing:.1em}
+.opening-top,.opening-bottom{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:20px;font:500 11px 'DM Mono',monospace;letter-spacing:.1em}
 .opening-top button{border:0;border-bottom:1px solid currentColor;background:transparent;color:inherit;padding:5px 0;cursor:pointer;font:inherit;letter-spacing:inherit}
 .opening-top button:hover{color:#c9c9c9}
 .opening-top button:focus-visible{outline:2px solid #fff;outline-offset:5px}
-.opening-smile{position:absolute;inset:0;transform-origin:center center}
+.opening-smile{position:absolute;inset:0;transform-origin:center center;pointer-events:none}
 .smile-stage{position:absolute;left:50%;top:50%;width:190px;height:190px;transform:translate(-50%,-50%)}
 .opening-hi{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:700 76px 'Space Grotesk',sans-serif;letter-spacing:-.12em}
 .opening-hi span{display:inline-block;transform-origin:center center}
