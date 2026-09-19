@@ -1,9 +1,12 @@
 :root{--visitor-color:#fff;--visitor-light:color-mix(in srgb,var(--visitor-color) 68%,white);--visitor-deep:color-mix(in srgb,var(--visitor-color) 68%,black);--visitor-soft:color-mix(in srgb,var(--visitor-color) 20%,white)}
 body.opening-active{overflow:hidden}
 #app{position:relative}
-.colour-gate{position:fixed;z-index:1100;inset:0;background:#fff;color:#111;display:grid;place-items:center;padding:28px 4vw;transition:opacity .35s ease}
+.colour-gate{position:fixed;z-index:1100;inset:0;background:#fff;color:#111;display:grid;place-items:center;padding:28px 4vw;transition:opacity .65s cubic-bezier(.65,0,.35,1)}
 .colour-gate[hidden]{display:none}.colour-gate.is-leaving{opacity:0;pointer-events:none}
-.colour-prompt{width:min(430px,88vw)}
+.colour-prompt{width:min(430px,88vw);transition:opacity .35s ease,transform .55s cubic-bezier(.65,0,.35,1)}
+.colour-gate-name{transition:opacity .35s ease}
+.colour-gate.is-leaving .colour-prompt{opacity:0;transform:translateY(-10px)}
+.colour-gate.is-leaving .colour-gate-name{opacity:0}
 .colour-prompt>p{min-height:24px;margin:0 0 34px;font:500 13px 'DM Mono',monospace;letter-spacing:.06em}
 .typing-cursor{display:inline-block;width:1px;height:1em;margin-left:4px;background:#111;vertical-align:-2px;animation:cursor-blink .75s steps(1) infinite}
 .colour-prompt form{margin:0}.colour-prompt form[hidden]{display:none}
@@ -49,5 +52,5 @@ body.opening-active{overflow:hidden}
 .opening-bottom{color:#bbb}
 .opening-scroll{visibility:hidden}
 .opening.is-ready .opening-scroll{visibility:visible}
-@media(prefers-reduced-motion:reduce){.typing-cursor{animation:none}.colour-gate{transition:none}}
+@media(prefers-reduced-motion:reduce){.typing-cursor{animation:none}.colour-gate,.colour-prompt,.colour-gate-name{transition:none}}
 @media(max-width:650px){.colour-gate{padding:23px 6vw}.colour-gate-name{left:6vw;top:23px;font-size:9px}.colour-prompt>p{font-size:11px}.opening{padding:23px 6vw}.opening-top,.opening-bottom{font-size:9px}.opening-center{max-width:100%}.opening-line>span{font-size:clamp(64px,17vw,105px)}.opening-center p{font-size:9px;line-height:1.7;margin-top:24px}.opening-bottom span:last-child{display:none}}

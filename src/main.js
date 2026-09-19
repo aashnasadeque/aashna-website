@@ -93,14 +93,18 @@ const colourIsDark = (colour) => {
 const startOpening = (colour) => {
   document.documentElement.style.setProperty('--visitor-color', colour);
   opening.classList.toggle('opening-on-light', colourIsDark(colour));
-  colourGate.classList.add('is-leaving');
+  colourInput.disabled = true;
+  colourForm.querySelector('button').disabled = true;
+  opening.hidden = false;
+  window.scrollTo(0, 0);
+  requestAnimationFrame(() => colourGate.classList.add('is-leaving'));
   window.setTimeout(() => {
     colourGate.hidden = true;
-    opening.hidden = false;
-    window.scrollTo(0, 0);
+  }, reducedMotion ? 0 : 650);
+  window.setTimeout(() => {
     if (reducedMotion && !replayRequested) finishOpening();
     else introTimeline.play(0);
-  }, reducedMotion ? 0 : 350);
+  }, reducedMotion ? 0 : 260);
 };
 
 const scrollProgress = document.querySelector('#scroll-progress');
