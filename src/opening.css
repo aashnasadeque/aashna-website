@@ -1,4 +1,4 @@
-:root{--intro-color:#fff}
+:root{--visitor-color:#fff;--visitor-light:color-mix(in srgb,var(--visitor-color) 68%,white);--visitor-deep:color-mix(in srgb,var(--visitor-color) 68%,black);--visitor-soft:color-mix(in srgb,var(--visitor-color) 20%,white)}
 body.opening-active{overflow:hidden}
 #app{position:relative}
 .colour-gate{position:fixed;z-index:1100;inset:0;background:#fff;color:#111;display:grid;place-items:center;padding:28px 4vw;transition:opacity .35s ease}
@@ -16,6 +16,11 @@ body.opening-active{overflow:hidden}
 .colour-gate-name{position:absolute;left:4vw;top:28px;font:500 10px 'DM Mono',monospace;letter-spacing:.1em}
 @keyframes cursor-blink{50%{opacity:0}}
 .opening{position:fixed;z-index:1000;inset:0;background:#050505;color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:28px 4vw;will-change:transform}
+.opening.opening-on-light{background:#fff;color:#111}
+.opening.opening-on-light .opening-top button{color:#111}
+.opening.opening-on-light .opening-top button:focus-visible{outline-color:#111}
+.opening.opening-on-light .opening-period{color:#111}
+.opening.opening-on-light .opening-bottom{color:#555}
 .opening[hidden]{display:none}
 .opening.is-ready{position:relative;inset:auto;min-height:100svh;z-index:0;will-change:auto}
 .opening-top,.opening-bottom{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:20px;font:500 11px 'DM Mono',monospace;letter-spacing:.1em}
@@ -24,15 +29,15 @@ body.opening-active{overflow:hidden}
 .opening-top button:focus-visible{outline:2px solid #fff;outline-offset:5px}
 .opening-smile{position:absolute;inset:0;transform-origin:center center;pointer-events:none}
 .smile-stage{position:absolute;left:50%;top:50%;width:190px;height:190px;transform:translate(-50%,-50%)}
-.opening-hi{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--intro-color);font:700 76px 'Space Grotesk',sans-serif;letter-spacing:-.12em}
+.opening-hi{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--visitor-color);font:700 76px 'Space Grotesk',sans-serif;letter-spacing:-.12em}
 .opening-hi span{display:inline-block;transform-origin:center center}
 .opening-smile svg{position:absolute;inset:0;display:block;width:190px;height:190px;overflow:visible}
 .smile-ring{transform-origin:center center;opacity:0}
-.smile-ring text{fill:var(--intro-color);font:500 8.5px 'DM Mono',monospace;letter-spacing:1.8px}
-.smile-guide{fill:none;stroke:var(--intro-color);stroke-width:.5;opacity:.35}
-.smile-face circle{fill:var(--intro-color)}
+.smile-ring text{fill:var(--visitor-color);font:500 8.5px 'DM Mono',monospace;letter-spacing:1.8px}
+.smile-guide{fill:none;stroke:var(--visitor-color);stroke-width:.5;opacity:.35}
+.smile-face circle{fill:var(--visitor-color)}
 .smile-eye{opacity:0}
-.smile-face path{fill:none;stroke:var(--intro-color);stroke-linecap:round}
+.smile-face path{fill:none;stroke:var(--visitor-color);stroke-linecap:round}
 .smile-mouth{opacity:0;stroke-width:6}
 .smile-wink{opacity:0;stroke-width:4}
 .opening-center{width:100%;max-width:1160px;margin:auto;transform-origin:center center;opacity:0}

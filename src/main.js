@@ -17,6 +17,19 @@ const colourForm = document.querySelector('#colour-form');
 const colourInput = document.querySelector('#favourite-colour');
 const colourError = document.querySelector('#colour-error');
 const typedQuestion = document.querySelector('#typed-question');
+const themeToggle = document.querySelector('#theme-toggle');
+
+const applyTheme = (theme) => {
+  document.documentElement.dataset.theme = theme;
+  themeToggle.setAttribute('aria-pressed', String(theme === 'light'));
+  themeToggle.textContent = theme === 'light' ? 'DARK MODE' : 'LIGHT MODE';
+};
+applyTheme(localStorage.getItem('aashna-theme') || 'dark');
+themeToggle.addEventListener('click', () => {
+  const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  localStorage.setItem('aashna-theme', nextTheme);
+  applyTheme(nextTheme);
+});
 
 app.inert = true;
 document.body.classList.add('opening-active');
@@ -64,8 +77,22 @@ introTimeline
   .from('.opening-line > span', { yPercent: 115, duration: .65, stagger: .1, ease: 'power3.out' })
   .from('.opening-center p', { opacity: 0, y: 14, duration: .3, ease: 'power2.out' }, '-=.2');
 
+const colourIsDark = (colour) => {
+  const probe = document.createElement('span');
+  probe.style.color = colour;
+  document.body.appendChild(probe);
+  const channels = getComputedStyle(probe).color.match(/[\d.]+/g)?.slice(0, 3).map(Number) || [255, 255, 255];
+  probe.remove();
+  const linear = channels.map((channel) => {
+    const value = channel / 255;
+    return value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4;
+  });
+  return linear[0] * .2126 + linear[1] * .7152 + linear[2] * .0722 < .3;
+};
+
 const startOpening = (colour) => {
-  document.documentElement.style.setProperty('--intro-color', colour);
+  document.documentElement.style.setProperty('--visitor-color', colour);
+  opening.classList.toggle('opening-on-light', colourIsDark(colour));
   colourGate.classList.add('is-leaving');
   window.setTimeout(() => {
     colourGate.hidden = true;
@@ -75,6 +102,20 @@ const startOpening = (colour) => {
     else introTimeline.play(0);
   }, reducedMotion ? 0 : 350);
 };
+
+const scrollProgress = document.querySelector('#scroll-progress');
+let progressFrame;
+const updateScrollProgress = () => {
+  const available = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = available > 0 ? Math.min(window.scrollY / available, 1) : 0;
+  scrollProgress.style.transform = `scaleX(${progress})`;
+  progressFrame = null;
+};
+window.addEventListener('scroll', () => {
+  if (!progressFrame) progressFrame = requestAnimationFrame(updateScrollProgress);
+}, { passive: true });
+window.addEventListener('resize', updateScrollProgress);
+updateScrollProgress();
 
 colourForm.addEventListener('submit', (event) => {
   event.preventDefault();
