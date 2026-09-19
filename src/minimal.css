@@ -34,6 +34,15 @@ html{scroll-behavior:auto}
 [data-theme="light"] .scroll-line{background:#888}
 [data-theme="light"] .text-link,[data-theme="light"] .text-link:hover{color:var(--visitor-deep)}
 [data-theme="light"] .button-primary,[data-theme="light"] .button-primary:hover{background:var(--visitor-soft);border:1px solid color-mix(in srgb,var(--visitor-color) 45%,#777);color:#111}
+[data-theme="light"] .about-section{background:#fbeff5}
+[data-theme="light"] .work-section{background:#f1eef8}
+[data-theme="light"] .project-card.is-hovered,[data-theme="light"] .project-card.is-open{background:#faf8fc;box-shadow:0 0 0 16px #faf8fc}
+[data-theme="light"] .experience-section{background:#eef7fc}
+[data-theme="light"] .beyond-section{background:#fff6c9}
+[data-theme="light"] .beyond-card{background:#faedb8;border-color:#dfcf78}
+[data-theme="light"] .beyond-card:hover,[data-theme="light"] .beyond-card[open]{background:#f7e7a5;border-color:#b9a74c}
+[data-theme="light"] .contact-section{background:#eff6dc}
+[data-theme="light"] .footer-row{border-color:#b9c99e}
 .eyebrow{margin-bottom:35px;color:#ddd}
 .eyebrow-index{color:#858585}
 .hero-bottom{left:8vw;right:8vw;bottom:34px}
