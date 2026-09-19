@@ -11,6 +11,20 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <section class="colour-gate" id="colour-gate" aria-labelledby="colour-question">
+      <div class="colour-prompt">
+        <p id="colour-question"><span id="typed-question"></span><span class="typing-cursor" aria-hidden="true"></span></p>
+        <form id="colour-form" hidden>
+          <label for="favourite-colour">Type a colour</label>
+          <div class="colour-input-row">
+            <input id="favourite-colour" name="colour" type="text" autocomplete="off" maxlength="32" placeholder="pink, blue, #c8a2c8..." required />
+            <button type="submit" aria-label="Continue">ENTER ↗</button>
+          </div>
+          <p class="colour-error" id="colour-error" aria-live="polite"></p>
+        </form>
+      </div>
+      <span class="colour-gate-name">AASHNA SADEQUE</span>
+    </section>
     <div class="opening" id="opening" hidden>
       <div class="opening-top"><span>AASHNA SADEQUE</span><button type="button" id="skip-opening">SKIP INTRO ↗</button></div>
       <div class="opening-smile" aria-hidden="true">
