@@ -45,6 +45,7 @@ const finishOpening = (scrollToSite = false) => {
     gsap.set('.opening-line > span, .opening-center p', { clearProps: 'all' });
     opening.classList.add('is-ready');
     app.inert = false;
+    app.removeAttribute('inert');
     document.body.classList.remove('opening-active');
     skipOpening.textContent = 'EXPLORE SITE ↓';
     openingReady = true;
@@ -121,6 +122,16 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 window.addEventListener('resize', updateScrollProgress);
 updateScrollProgress();
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'auto', block: 'start' });
+    history.replaceState(null, '', link.getAttribute('href'));
+  });
+});
 
 colourForm.addEventListener('submit', (event) => {
   event.preventDefault();

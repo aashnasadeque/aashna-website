@@ -1,5 +1,5 @@
 /* A quiet, static first page. The coloured chapters retain their content. */
-html{scroll-behavior:auto}
+html:root{scroll-behavior:auto}
 .site-header .logo{font:500 11px 'DM Mono',monospace;letter-spacing:.1em;white-space:nowrap}
 .site-header-actions{display:flex;align-items:center;gap:13px}.theme-toggle{display:grid;place-items:center;width:34px;height:34px;border:1px solid #ffffff70;border-radius:50%;background:transparent;color:#ddd;padding:0;cursor:pointer;font:400 18px/1 Georgia,serif}
 .scroll-progress{position:fixed;z-index:900;left:0;top:0;width:100%;height:3px;background:var(--visitor-color);transform:scaleX(0);transform-origin:left center;box-shadow:0 0 10px color-mix(in srgb,var(--visitor-color) 55%,transparent);pointer-events:none}
@@ -34,15 +34,15 @@ html{scroll-behavior:auto}
 [data-theme="light"] .scroll-line{background:#888}
 [data-theme="light"] .text-link,[data-theme="light"] .text-link:hover{color:var(--visitor-deep)}
 [data-theme="light"] .button-primary,[data-theme="light"] .button-primary:hover{background:var(--visitor-soft);border:1px solid color-mix(in srgb,var(--visitor-color) 45%,#777);color:#111}
-[data-theme="light"] .about-section{background:#fbeff5}
-[data-theme="light"] .work-section{background:#f1eef8}
-[data-theme="light"] .project-card.is-hovered,[data-theme="light"] .project-card.is-open{background:#faf8fc;box-shadow:0 0 0 16px #faf8fc}
-[data-theme="light"] .experience-section{background:#eef7fc}
-[data-theme="light"] .beyond-section{background:#fff6c9}
-[data-theme="light"] .beyond-card{background:#faedb8;border-color:#dfcf78}
-[data-theme="light"] .beyond-card:hover,[data-theme="light"] .beyond-card[open]{background:#f7e7a5;border-color:#b9a74c}
-[data-theme="light"] .contact-section{background:#eff6dc}
-[data-theme="light"] .footer-row{border-color:#b9c99e}
+[data-theme="light"] .about-section{background:#fffafd}
+[data-theme="light"] .work-section{background:#fcfbff}
+[data-theme="light"] .project-card.is-hovered,[data-theme="light"] .project-card.is-open{background:#fff;box-shadow:0 0 0 16px #fff}
+[data-theme="light"] .experience-section{background:#f8fcff}
+[data-theme="light"] .beyond-section{background:#fffdf0}
+[data-theme="light"] .beyond-card{background:#fff8d8;border-color:#e7d98b}
+[data-theme="light"] .beyond-card:hover,[data-theme="light"] .beyond-card[open]{background:#fff3c1;border-color:#c5b45e}
+[data-theme="light"] .contact-section{background:#fbfff3}
+[data-theme="light"] .footer-row{border-color:#cbd7b8}
 .eyebrow{margin-bottom:35px;color:#ddd}
 .eyebrow-index{color:#858585}
 .hero-bottom{left:8vw;right:8vw;bottom:34px}
