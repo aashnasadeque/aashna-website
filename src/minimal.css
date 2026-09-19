@@ -19,12 +19,8 @@ html{scroll-behavior:auto}
 .hero-bottom{left:8vw;right:8vw;bottom:34px}
 .hero-bottom span:last-child{display:inline}
 .about-links-art,.experience-stack{display:none}
-.about-layout{grid-template-areas:'title copy' 'bracelet copy';grid-template-rows:auto 390px;align-items:start}
-.about-layout>h2{grid-area:title}.about-copy{grid-area:copy}.bracelet-wrap{grid-area:bracelet;position:relative;height:370px;margin-top:24px;max-width:540px}
-.bracelet-scene{position:absolute;inset:0;cursor:grab;touch-action:none}.bracelet-scene:active{cursor:grabbing}.bracelet-scene canvas{display:block;width:100%;height:100%}
-.bracelet-label{position:absolute;left:0;bottom:0;font:500 10px 'DM Mono',monospace;letter-spacing:.1em;color:#765369}
 .about-section,.work-section,.experience-section,.beyond-section,.contact-section{perspective:none}
 .about-layout h2,.about-copy,.project-art,.timeline-item,.beyond-card,.contact-section h2{transform:none!important;backface-visibility:visible}
 .project-card:hover .project-art,.beyond-card:hover,.beyond-card[open],.art-whisk img{transform:none}
-@media(max-width:900px){.hero{min-height:760px}.hero-copy{padding:170px 7vw 145px}.hero h1{font-size:clamp(59px,9vw,86px)}.hero-bottom{left:7vw;right:7vw}.about-layout{grid-template-areas:'title copy' 'bracelet copy';grid-template-rows:auto 340px}.bracelet-wrap{height:320px}}
-@media(max-width:650px){.site-header .logo{font-size:9px}.mini-smile{width:26px;height:26px}.mini-smile i{top:8px}.mini-smile i:first-child{left:7px}.mini-smile i:nth-child(2){right:7px}.mini-smile b{left:7px;top:11px;width:10px;height:7px}.site-header .header-smile{left:auto;right:112px}.hero{min-height:720px}.hero-copy{padding:125px 7vw 135px}.hero h1{font-size:clamp(51px,12vw,72px);line-height:1.04}.hero-description{font-size:15px;margin:30px 0 25px}.hero-actions{gap:22px;flex-wrap:wrap}.hero-bottom{bottom:24px}.hero-bottom span:last-child{display:none}.about-layout{grid-template-areas:'title' 'bracelet' 'copy';grid-template-rows:auto 320px auto}.bracelet-wrap{height:290px;margin-top:5px}.bracelet-label{font-size:8px}}
+@media(max-width:900px){.hero{min-height:760px}.hero-copy{padding:170px 7vw 145px}.hero h1{font-size:clamp(59px,9vw,86px)}.hero-bottom{left:7vw;right:7vw}}
+@media(max-width:650px){.site-header .logo{font-size:9px}.mini-smile{width:26px;height:26px}.mini-smile i{top:8px}.mini-smile i:first-child{left:7px}.mini-smile i:nth-child(2){right:7px}.mini-smile b{left:7px;top:11px;width:10px;height:7px}.site-header .header-smile{left:auto;right:112px}.hero{min-height:720px}.hero-copy{padding:125px 7vw 135px}.hero h1{font-size:clamp(51px,12vw,72px);line-height:1.04}.hero-description{font-size:15px;margin:30px 0 25px}.hero-actions{gap:22px;flex-wrap:wrap}.hero-bottom{bottom:24px}.hero-bottom span:last-child{display:none}}
