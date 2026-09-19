@@ -13,6 +13,8 @@ const replayRequested = new URLSearchParams(window.location.search).has('intro')
 const opening = document.querySelector('#opening');
 const app = document.querySelector('#app');
 
+import('./bracelet.js').then(({ initBracelet }) => initBracelet({ reducedMotion }));
+
 opening.hidden = false;
 app.inert = true;
 document.body.classList.add('opening-active');
