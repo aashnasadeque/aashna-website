@@ -17,10 +17,10 @@
 .brief-mock span,.brief-mock small{font:10px 'DM Mono',monospace;letter-spacing:.09em}
 .brief-mock strong{font:600 clamp(28px,3vw,48px)/.98 'Space Grotesk',sans-serif;letter-spacing:-.06em}
 .art-whisk{background:radial-gradient(circle at 70% 26%,#fbdcca,#ce8398 56%,#8d6089)}
-.cake-art{position:absolute;inset:11% 20%;display:flex;align-items:center;justify-content:center;transform:rotate(-7deg)}
-.cake-art>span{position:relative;z-index:2;font:700 clamp(45px,5vw,80px)/.79 'Space Grotesk',sans-serif;letter-spacing:-.09em;color:#fff9f2;text-shadow:0 7px 25px #60375565}
-.cake-dot{color:#fceba5}
-.cake-art i{position:absolute;width:180px;height:180px;border:16px solid #f6cfac;border-radius:50%;transform:rotateX(63deg);top:48%;box-shadow:0 18px 30px #6a426a70}
+.whisk-mark{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff8f5;isolation:isolate;transform:rotate(-5deg)}
+.whisk-mark span{font:500 18px 'DM Mono',monospace;letter-spacing:.18em;text-transform:uppercase;margin:0 0 -7px -100px}
+.whisk-mark strong{font:600 clamp(58px,7vw,100px)/.9 'Space Grotesk',sans-serif;letter-spacing:-.08em}
+.whisk-mark i{position:absolute;width:210px;height:210px;border:1px solid #fff8f588;border-radius:50%;z-index:-1;box-shadow:0 0 0 25px #fff8f51a,0 0 0 55px #fff8f50d}
 .more-work>div>a{border-bottom:1px solid #d1d0cf;padding:0 0 17px;margin-bottom:17px;font-size:15px;display:flex;justify-content:space-between;gap:15px;transition:color .2s}
 .more-work>div>a:hover{color:#654fae}
 .beyond-section{background:#151622;padding:120px 0 135px}

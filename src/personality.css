@@ -33,9 +33,6 @@
 .interest-button:hover{transform:translateY(-2px);border-color:#d7b5d5}
 .interest-button[aria-pressed="true"]{background:#e5ff84;color:#17191f;border-color:#e5ff84}
 .interest-button:focus-visible{outline:2px solid #e5ff84;outline-offset:2px}
-.art-whisk{background:#d8c4c0}
-.art-whisk img{height:100%;width:100%;display:block;object-fit:cover;object-position:center 58%;transition:transform .55s ease}
-.project-card:hover .art-whisk img{transform:scale(1.045)}
 .art-whisk .art-caption{background:#211a2dbb;color:#fff;padding:7px 9px;border-radius:3px}
 .more-work-list details{border-bottom:1px solid #d1d0cf}
 .more-work-list summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;cursor:pointer;font-size:15px;transition:color .2s}
