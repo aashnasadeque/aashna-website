@@ -22,7 +22,8 @@ const themeToggle = document.querySelector('#theme-toggle');
 const applyTheme = (theme) => {
   document.documentElement.dataset.theme = theme;
   themeToggle.setAttribute('aria-pressed', String(theme === 'light'));
-  themeToggle.textContent = theme === 'light' ? 'DARK MODE' : 'LIGHT MODE';
+  themeToggle.textContent = theme === 'light' ? '☾' : '☀';
+  themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
 };
 applyTheme(localStorage.getItem('aashna-theme') || 'light');
 themeToggle.addEventListener('click', () => {
