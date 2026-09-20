@@ -18,7 +18,7 @@ html:root{scroll-behavior:auto}
 .hero-actions{margin-top:0}
 .button-primary,.button-primary:hover{background:var(--visitor-light);color:#080808}.text-link,.text-link:hover{color:var(--visitor-light);border-color:currentColor}.header-contact span{color:var(--visitor-light)}
 .project-toggle,.project-detail a,.more-work-list details p a{color:var(--visitor-deep);border-color:currentColor}
-.beyond-icon,.beyond-card p a{color:var(--visitor-deep)}
+.beyond-card p a{color:var(--visitor-deep)}
 .contact-link{color:var(--visitor-deep);border-color:currentColor}
 [data-theme="light"]{background:#fff;color:#111}
 [data-theme="light"] .hero{background:#fff;color:#111}

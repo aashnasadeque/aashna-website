@@ -32,12 +32,11 @@
 .beyond-card:hover,.beyond-card[open]{background:#262838;border-color:#8c82b4;transform:translateY(-4px)}
 .beyond-card summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;min-height:285px;padding:24px;position:relative}
 .beyond-card summary::-webkit-details-marker{display:none}
-.beyond-icon{font:45px 'Space Grotesk',sans-serif;color:#e7e5ae;line-height:1}
-.beyond-card summary>span:nth-child(2){margin-top:auto;font:600 27px 'Space Grotesk',sans-serif;letter-spacing:-.05em}
+.beyond-card summary>span:first-child{margin-top:auto;font:600 27px 'Space Grotesk',sans-serif;letter-spacing:-.05em}
 .beyond-card small{font:10px 'DM Mono',monospace;letter-spacing:.07em;color:#a7a9bd;margin-top:7px}
 .beyond-card[open] summary{min-height:170px}
 .beyond-card p{font-size:14px;line-height:1.65;color:#c4c5d0;margin:0;padding:0 24px 24px}
 .beyond-card p a{color:#e7e5ae;border-bottom:1px solid currentColor}
 @media(max-width:1050px){.beyond-grid{grid-template-columns:repeat(2,1fr)}.beyond-card,.beyond-card summary{min-height:250px}}
-@media(max-width:650px){.work-hint{margin:-8px 0 22px;font-size:10px}.project-card.is-open{box-shadow:0 0 0 9px #f8f7f4}.project-art{margin-bottom:16px}.brief-mock{width:66%;left:18%}.beyond-section{padding:85px 0}.beyond-grid{grid-template-columns:1fr}.beyond-card,.beyond-card summary{min-height:185px}.beyond-card[open] summary{min-height:130px}.beyond-card summary>span:nth-child(2){font-size:25px}.footer-row>div{gap:14px;flex-wrap:wrap}.more-work>div>a{font-size:13px}}
+@media(max-width:650px){.work-hint{margin:-8px 0 22px;font-size:10px}.project-card.is-open{box-shadow:0 0 0 9px #f8f7f4}.project-art{margin-bottom:16px}.brief-mock{width:66%;left:18%}.beyond-section{padding:85px 0}.beyond-grid{grid-template-columns:1fr}.beyond-card,.beyond-card summary{min-height:185px}.beyond-card[open] summary{min-height:130px}.beyond-card summary>span:first-child{font-size:25px}.footer-row>div{gap:14px;flex-wrap:wrap}.more-work>div>a{font-size:13px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project-detail,.project-card,.beyond-card,.project-toggle span{transition:none}}

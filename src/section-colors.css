@@ -27,7 +27,7 @@
 .beyond-card{background:#edde91;border-color:#cbbd62}
 .beyond-card:hover,.beyond-card[open]{background:#e5d477;border-color:#9e9034}
 .beyond-card small,.beyond-card p{color:#5e572f}
-.beyond-icon,.beyond-card p a{color:#756910}
+.beyond-card p a{color:#756910}
 .replay-intro{color:#c9c7d4;border-bottom:1px solid #777383;padding-bottom:3px}
 .replay-intro:hover{color:#e5ff84;border-color:#e5ff84}
 @media(max-width:650px){.replay-intro{margin-left:auto}}
