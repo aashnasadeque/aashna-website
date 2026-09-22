@@ -48,6 +48,10 @@
 .contact-section{position:relative;overflow:hidden}
 .contact-section .section-wrap{position:relative;z-index:1}
 .contact-section h2,.contact-link{position:relative;z-index:2}
+.contact-socials{display:flex;gap:12px;margin-top:26px;position:relative;z-index:2}
+.contact-socials a{display:inline-flex;align-items:center;justify-content:space-between;gap:34px;border:1px solid currentColor;border-radius:99px;padding:12px 17px;font:500 11px 'DM Mono',monospace;letter-spacing:.07em;text-transform:uppercase;transition:background .2s,color .2s,transform .2s}
+.contact-socials a:hover{background:#151a1b;color:#dce8b5;transform:translateY(-2px)}
+@media(max-width:650px){.contact-socials{flex-wrap:wrap}.contact-socials a{gap:25px}}
 .contact-knot{position:absolute;right:8%;top:65px;width:320px;height:320px;transform-style:preserve-3d;pointer-events:none;opacity:.6}
 .contact-knot span{position:absolute;inset:13%;border:13px solid #738e5a;border-radius:48%;box-shadow:inset 0 0 17px #4f683655,0 20px 30px #66764b33;transform-style:preserve-3d}
 .contact-knot span:nth-child(1){transform:rotateX(64deg) rotateZ(25deg)}
